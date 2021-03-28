@@ -1,53 +1,60 @@
 # Fan-Controller
 
-A quad port wifi powered fan controller
-
   
 
+A quad port wifi powered fan controller
 This is the official repository for the Fan-Controller.
 
 **Reach goals:**
 
- - [ ] Variable PWM port with 5 - 12V supply (Supporting 5V and 12V fans)
- - [ ] Power output of 250mA (each port, total: 1A) 
- - [ ] Small display to show important values (like: flowing current, case temperature, fan voltage, active fan) 
- - [ ] WiFi enabled to controll over smart home app and showing stats
+- [ ] Variable PWM port with 5 - 12V supply (Supporting 5V and 12V fans)
+- [ ] Power output of 250mA (each port, total: 1A)
+- [ ] Small display to show important values (like: flowing current, case temperature, fan voltage, active fan)
+- [ ] WiFi enabled to controll over smart home app and showing stats
 - [ ] Fans could be connected directly (PC-Fan connector)
 - [ ] Lowpower consumtion on MCU side
 - [ ] Automatic fan control dependend on case temperature
 
-# Challenge
+## Challenge
+- limited budget
+-  should fit all functions
 
- 
-# Version 2.0 Fan-Controller
-The new version of the Fan-Controller is not only a new hardware revision. It will also fix the following bugs: 
- 
 
- - [ ] Powersupply is to hard to solder correct
- - [ ] Powersupply can not supply enought power
- - [ ] only 5V output
- - [ ] No Display or Serial output to controll
- - [ ] Firmware is to complicated so that a newbie could understand it
- - [ ] The controll circuit consums too much current
- - [ ] Could only connect Fans over male headers
+## Version 2.0 Fan-Controller
 
-with the new version I want to solve this problems. I also adding the following features as I already need to redesign the whole thing: 
+The new version of the Fan-Controller is not only a new hardware revision. It will also fix the following bugs:
 
-**MCU**
-In the first version I used a Microchip ATMega328P microcontroller. 
-This one did the job well but it's an old chip and it does not fit many pins and functions. 
-A long time ago I ordered some of these ESP32 Modules and wanted to use them in a project. 
-Now finally the time is comming. They feature WiFi & Bluetooth, a fast core and some I/O (enought for this project). 
+- [ ] Powersupply is to hard to solder correct
+- [ ] Powersupply can not supply enought power
+- [ ] only 5V output
+- [ ] No Display or Serial output to controll
+- [ ] Firmware is to complicated so that a newbie could understand it
+- [ ] The controll circuit consums too much current
+- [ ] Could only connect Fans over male headers
 
-**FAN Output**
-As a fan output driver I will use the IRF540 FET's. These one are a bit overpowered, but this is even better because they are not getting hot and I have plenty of them. 
+with the new version I want to solve this problems. I also adding the following features as I already need to redesign the whole thing:
 
-**Power Supply**
-As for power the whole pcb will be powered by +12VDC. 
-on the system we have two voltage regulators for the diffrent voltages (+3V3(MCU), +5V). 
-To keep the whole circuit as simple and cheap as possible we will supply the 12V fans directly from the rail. 
+  
+**MCU:**
+In the first version I used a Microchip ATMega328P microcontroller.
+This one did the job well but it's an old chip and it does not fit many pins and functions.
+As WiFi is not the most important feature I will use an STM32 as main CPU. But as a second WiFi core I will add an ESP8266 to add WiFi to the project. This ESP is fully controlled by the STM32 and could be disconnnected completly by the IO of the STM32. 
+  
 
-+------------+
-|  and this  |
-+------------+
+**FAN Output:**
+As a fan output driver I will use the IRF540 FET's. These one are a bit overpowered, but this is even better because they are not getting hot and I have plenty of them.
+
+
+**Power Supply:**
+As for power the whole pcb will be powered by +12VDC.
+on the system we have two voltage regulators for the diffrent voltages (+3V3(MCU), +5V).
+To keep the whole circuit as simple and cheap as possible we will supply the 12V fans directly from the rail.
+
+**Display:**
+In this project I'm using a small Monochrome TFT Display to display the most important data. This display which I use is not available any more but I have some laying around, so I will use them to display this data: 
+
+- flowing current (each Fan)
+- Server case Temperature
+- which voltage is set for the fan
+- which port is active
 
