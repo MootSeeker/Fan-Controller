@@ -7,7 +7,7 @@ This is the official repository for the Fan-Controller.
 
 **Reach goals:**
 
-- [ ] Variable PWM port with 5 - 12V supply (Supporting 5V and 12V fans)
+- [ ] Variable PWM port with 5V supply (Supporting 5VDC fans)
 - [ ] Power output of 250mA (each port, total: 1A)
 - [ ] Small display to show important values (like: flowing current, case temperature, fan voltage, active fan)
 - [ ] WiFi enabled to controll over smart home app and showing stats
@@ -17,7 +17,8 @@ This is the official repository for the Fan-Controller.
 
 ## Challenge
 - limited budget
--  should fit all functions
+- limited time (Should be done in less than a week of work)
+- should fit all functions
 
 
 ## Version 2.0 Fan-Controller
@@ -26,7 +27,6 @@ The new version of the Fan-Controller is not only a new hardware revision. It wi
 
 - [ ] Powersupply is to hard to solder correct
 - [ ] Powersupply can not supply enought power
-- [ ] only 5V output
 - [ ] No Display or Serial output to controll
 - [ ] Firmware is to complicated so that a newbie could understand it
 - [ ] The controll circuit consums too much current
@@ -47,8 +47,9 @@ As a fan output driver I will use the IRF540 FET's. These one are a bit overpowe
 
 **Power Supply:**
 As for power the whole pcb will be powered by +12VDC.
-on the system we have two voltage regulators for the diffrent voltages (+3V3(MCU), +5V).
-To keep the whole circuit as simple and cheap as possible we will supply the 12V fans directly from the rail.
+on the system we have two voltage regulators for the diffrent voltages (+3V3(MCU), +5V(Fan)).
+To keep the whole circuit as simple and cheap as possible we will only use 5V fans. This also makes the first version of the PCB a bit easier to test the whole application.
+
 
 **Display:**
 In this project I'm using a small Monochrome TFT Display to display the most important data. This display which I use is not available any more but I have some laying around, so I will use them to display this data: 
