@@ -7,11 +7,7 @@ This is the official repository for the Fan-Controller.
 
 **Reach goals:**
 
-<<<<<<< Updated upstream
 - [ ] Variable PWM port with 5V supply (Supporting 5VDC fans)
-=======
-- [ ] Variable PWM port with 5 - 12V supply (PWM on Supply Voltage)
->>>>>>> Stashed changes
 - [ ] Power output of 250mA (each port, total: 1A)
 - [ ] Fans could be connected via Screwing terminal
 - [ ] Lowpower consumtion on MCU side
@@ -49,11 +45,6 @@ As a fan output driver I will use the IRF540 FET's. These one are a bit overpowe
 
 **Power Supply:**
 As for power the whole pcb will be powered by +12VDC.
-<<<<<<< Updated upstream
-on the system we have two voltage regulators for the diffrent voltages (+3V3(MCU), +5V(Fan)).
-To keep the whole circuit as simple and cheap as possible we will only use 5V fans. This also makes the first version of the PCB a bit easier to test the whole application.
-=======
->>>>>>> Stashed changes
 
 
 **Display:**
